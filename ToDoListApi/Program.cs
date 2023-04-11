@@ -41,7 +41,7 @@ namespace ToDoList
 
             builder.Services.AddDbContext<TarefaDbContext>(options =>
             {
-                options.UseNpgsql(builder.Configuration.GetConnectionString("Docker"), 
+                options.UseNpgsql(builder.Configuration.GetConnectionString("Render"), 
                     m => m.MigrationsAssembly("ToDoListApi"));
             });
 
