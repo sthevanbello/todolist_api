@@ -1,8 +1,9 @@
-﻿using ToDoList.Context;
-using ToDoList.Interfaces;
-using ToDoList.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using TodoList.Context;
+using TodoList.Interfaces;
+using TodoList.Models;
 
-namespace ToDoList.Repositorios
+namespace TodoList.Repositorios
 {
     public class Repositorio : IRepositorio
     {

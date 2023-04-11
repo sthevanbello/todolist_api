@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ToDoList.Models;
+using TodoList.Models;
 
-namespace ToDoList.Context
+namespace TodoList.Context
 {
     public class TarefaDbContext : DbContext
     {

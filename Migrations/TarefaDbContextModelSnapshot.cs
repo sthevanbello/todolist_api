@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ToDoList.Context;
+using TodoList.Context;
 
 #nullable disable
 
-namespace ToDoList.Migrations
+namespace TodoList.Migrations
 {
     [DbContext(typeof(TarefaDbContext))]
     partial class TarefaDbContextModelSnapshot : ModelSnapshot
@@ -21,7 +21,7 @@ namespace ToDoList.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ToDoList.Models.Tarefa", b =>
+            modelBuilder.Entity("TodoList.Models.Tarefa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

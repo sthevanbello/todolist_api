@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
-namespace ToDoList.Models
+namespace TodoList.Models
 {
     public class Tarefa
     {

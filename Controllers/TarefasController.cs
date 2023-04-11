@@ -1,27 +1,26 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Interfaces;
-using ToDoList.Models;
-using ToDoList.Repositorios;
+using TodoList.Interfaces;
+using TodoList.Models;
 
-namespace ToDoList.Controllers
+namespace TodoList.Controllers
 {
     [Route("api/tarefas")]
     [ApiController]
     public class TarefasController : ControllerBase
     {
         private readonly IRepositorio _repositorio;
-        public TarefasController(IRepositorio repositorio) 
-        { 
+        public TarefasController(IRepositorio repositorio)
+        {
             _repositorio = repositorio;
         }
-        
+
         /// <summary>
         /// Lista todas as tarefas da base de dados
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult GetAll() 
+        public IActionResult GetAll()
         {
             try
             {

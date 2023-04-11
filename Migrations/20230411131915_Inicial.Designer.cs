@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ToDoList.Context;
+using TodoList.Context;
 
 #nullable disable
 
-namespace ToDoList.Migrations
+namespace TodoList.Migrations
 {
     [DbContext(typeof(TarefaDbContext))]
-    [Migration("20230410234501_Inicial")]
+    [Migration("20230411131915_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace ToDoList.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ToDoList.Models.Tarefa", b =>
+            modelBuilder.Entity("TodoList.Models.Tarefa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

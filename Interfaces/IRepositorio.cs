@@ -1,6 +1,6 @@
-﻿using ToDoList.Models;
+﻿using TodoList.Models;
 
-namespace ToDoList.Interfaces
+namespace TodoList.Interfaces
 {
     public interface IRepositorio
     {

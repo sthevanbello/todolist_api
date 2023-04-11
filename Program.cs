@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using ToDoList.Context;
-using ToDoList.Interfaces;
-using ToDoList.Repositorios;
+using TodoList.Context;
+using TodoList.Interfaces;
+using TodoList.Repositorios;
 
-namespace ToDoList
+namespace TodoList
 {
     public class Program
     {
@@ -14,14 +14,11 @@ namespace ToDoList
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            //builder.Services.AddAuthorization();
-
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            
+            builder.Services.AddAuthorization();
             builder.Services.AddControllers();
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen( c =>
+            builder.Services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
@@ -38,11 +35,10 @@ namespace ToDoList
                 c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlArquivo));
             });
 
-
             builder.Services.AddDbContext<TarefaDbContext>(options =>
             {
-                options.UseNpgsql(builder.Configuration.GetConnectionString("Render"), 
-                    m => m.MigrationsAssembly("ToDoListApi"));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("Render"),
+                    m => m.MigrationsAssembly("TodoList"));
             });
 
             builder.Services.AddScoped<IRepositorio, Repositorio>();
@@ -54,7 +50,6 @@ namespace ToDoList
                 var db = scope.ServiceProvider.GetRequiredService<TarefaDbContext>();
                 db.Database.Migrate();
             }
-
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
