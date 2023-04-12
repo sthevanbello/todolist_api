@@ -63,7 +63,7 @@ namespace TodoList
                 app.UseSwaggerUI();
             }
 
-            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors(options => options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
