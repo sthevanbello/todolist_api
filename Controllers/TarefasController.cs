@@ -59,7 +59,7 @@ namespace TodoList.Controllers
             try
             {
                 _repositorio.InsertTarefa(tarefa);
-                return Ok(tarefa);
+                return Ok(new { msg = "Tarefa inserida com sucesso", tarefa });
             }
             catch (Exception ex)
             {
@@ -86,7 +86,7 @@ namespace TodoList.Controllers
             try
             {
                 _repositorio.DeleteTarefa(id);
-                return Ok();
+                return Ok(new { msg = "Tarefa removida com sucesso"});
             }
             catch (Exception ex)
             {
@@ -120,7 +120,7 @@ namespace TodoList.Controllers
             try
             {
                 var retorno = _repositorio.UpdateTarefa(tarefa);
-                return Ok(retorno);
+                return Ok(new { msg = "Tarefa atualizada com sucesso", tarefa });
             }
             catch (Exception ex)
             {
