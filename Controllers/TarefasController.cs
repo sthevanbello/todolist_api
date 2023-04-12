@@ -80,7 +80,7 @@ namespace TodoList.Controllers
         /// </remarks>
         /// <param name="id">Id da tarefa a ser removida</param>
         /// <returns>Retorna um Ok result</returns>
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             try
