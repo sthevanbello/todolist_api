@@ -45,7 +45,7 @@ namespace TodoList
 
             builder.Services.AddCors(policyBuilder =>
                 policyBuilder.AddDefaultPolicy(policy =>
-                policy.WithOrigins("*").AllowAnyHeader().AllowAnyHeader())
+                policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin())
             );
 
             var app = builder.Build();
@@ -63,7 +63,7 @@ namespace TodoList
                 app.UseSwaggerUI();
             }
 
-            app.UseCors(options => options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
+            app.UseCors();
 
             app.UseHttpsRedirection();
 
